@@ -1,0 +1,736 @@
+@charset "utf-8";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+}
+
+img {
+  vertical-align: bottom;
+}
+
+p {
+  margin: 0;
+}
+
+h2 {
+  margin: 0;
+}
+
+h3 {
+  margin: 0;
+}
+
+/* ----- header ----- */
+
+h1 {
+  margin: 0;
+  background: #111;
+  padding-left: 3%;
+}
+
+h1 img {
+  width: 150px;
+  object-fit: cover;
+}
+
+.pc-header {
+  display: none;
+}
+
+#sp-overlay-open {
+  position: fixed;
+  top: 0;
+  right: 0;
+  color: #aaa;
+  font-size: 32px;
+  display: inline-block;
+  width: 75px;
+  line-height: 75px;
+  text-align: center;
+  cursor: pointer;
+  z-index: 4;
+}
+
+#sp-overlay-open.dot-hidden {
+  opacity: 0;
+}
+
+.sp-menu-overlay {
+  position: fixed;
+  top:0 ;
+  right: 0;
+  width: 50%;
+  height: 100vh;
+  background: rgba(255, 255, 255, .8);
+  transform: translateX(100%);
+  transition: transform .5s;
+  z-index: 5;
+}
+
+.sp-menu-overlay.menu-open {
+  transform: none;
+}
+
+.sp-menu-overlay .sp-icon-box {
+  position: relative;
+}
+
+#sp-overlay-close {
+  position: absolute;
+  top: 6%;
+  right: 6%;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+.sp-menu {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  place-items: center;
+  /* align-items: center; */
+  font-size: 24px;
+}
+
+.sp-menu li  {
+  width: 100%;
+  padding: 0 8px;
+  box-sizing: border-box;
+}
+
+.sp-menu li a{
+  color: #111;
+  text-decoration: none;
+}
+
+.sp-menu-products {
+  position: relative;
+  width: 100%;
+}
+
+.sp-menu-products li {
+  margin-top: 4px;
+}
+
+.sp-menu1::after {
+  content: '>';
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 10%;
+  transform: rotate(90deg);
+  transition: transform .4s;
+}
+
+.sp-menu.open .sp-menu1::after {
+  transform: rotate(-90deg);
+}
+
+.sp-menu-lists {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: none;
+  animation: fadeIn .4s forwards;
+}
+
+.sp-menu.open .sp-menu-lists {
+  display: block;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+#back-to-start {
+  position: fixed;
+  bottom: 3%;
+  left: 3%;
+  font-size: 48px;
+  cursor: pointer;
+  color: #aaa;
+  z-index: 5;
+}
+
+/* ----- hero ----- */
+
+.hero {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+video {
+  width: 100%;
+  min-height: 100%;
+  background: url(../imgs/店舗ロゴのみ　切り抜き.png), no-repeat;
+  background-size: cover;
+}
+
+/* ----- main ----- */
+
+/* ----- ichimatu & ryusui section ----- */
+
+.traditional,
+.present,
+.about-us,
+.modern-title,
+.daily {
+  width: calc(100% - 6%);
+  margin: 0 auto;
+  font-size: 40px;
+  text-align: center;
+}
+
+.ichimatu {
+  background: url(../imgs/仮想店舗背景　モバイル　市松.png) center/cover;
+  padding: 24px 0;
+}
+
+.ryusui {
+  background: url(../imgs/仮想店舗背景　流水　モバイル.png) center/cover;
+  padding: 24px 0;
+}
+
+.products-container {
+  width: 100%;
+  text-align: center;
+}
+
+.product-img {
+  opacity: 0;
+  transform: rotateY(90deg);
+  transition: transform .6s, opacity .6s;
+}
+
+.product-img.popup {
+  opacity: 1;
+  transform: none;
+}
+
+.vertical-text {
+  width: 80%;
+  color: #fff;
+  text-align: justify;
+  margin: 16px auto 0;
+  font-size: 24px;
+  font-family: '游明朝', 'ＭＳ 明朝', '游明朝体';
+  font-weight: bold;
+  text-shadow: 0 2px 8px #222;
+}
+
+/* ----- slide section ----- */
+
+.slide-show {
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  overflow: hidden;
+}
+
+.slide-img-01,
+.slide-img-02,
+.slide-img-03,
+.slide-img-04,
+.slide-img-05,
+.slide-img-06 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.slide-img-01 {
+  background-image: url(../imgs/漆採取　カンナ.png);
+  animation: slide-anime-01 28s infinite;
+}
+
+ .slide-img-02 {
+  background-image: url(../imgs/漆採取.png);
+  animation: slide-anime-02 28s infinite;
+}
+
+.slide-img-03 {
+  background-image: url(../imgs/漆こす１-白黒.png);
+  animation: slide-anime-03 28s infinite;
+}
+
+.slide-img-04 {
+  background-image: url(../imgs/漆器　職人　セピア.png);
+  animation: slide-anime-04 28s infinite;
+}
+
+.slide-img-05 {
+  background-image: url(../imgs/FREE漆成木１.png);
+  animation: slide-anime-05 28s infinite;
+}
+
+.slide-img-06 {
+  background-image: url(../imgs/FREE漆苗木１.png);
+  animation: slide-anime-06 28s infinite;
+} 
+
+@keyframes slide-anime-01 {
+  0% {
+    opacity: 1;
+    transform: scale(1.0);
+  }
+  17% {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+  83% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.0);
+  }
+}
+
+@keyframes slide-anime-02 {
+  0% {
+    opacity: 0;
+    transform: scale(1.2);
+  }
+  17% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  33% {
+    opacity: 0;
+    transform: scale(1.0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.0);
+  }
+}
+
+@keyframes slide-anime-03 {
+  0% {
+    opacity: 0;
+    transform: scale(1.0);
+  }
+  17% {
+    opacity: 0;
+    transform: scale(1.0);
+  }
+  33% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  50% {
+    opacity: 0;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.0);
+  }
+}
+
+@keyframes slide-anime-04 {
+  0% {
+    opacity: 0;
+    transform: scale(1.0);
+  }
+  33% {
+    opacity: 0;
+    transform: scale(1.2);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  66% {
+    opacity: 0;
+    transform: scale(1.0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.0);
+  }
+}
+
+@keyframes slide-anime-05 {
+  0% {
+    opacity: 0;
+    transform: scale(1.0);
+  }
+  50% {
+    opacity: 0;
+    transform: scale(1.0);
+  }
+  66% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  83% {
+    opacity: 0;
+    transform: scale(1.2)
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.0);
+  }
+}
+
+@keyframes slide-anime-06 {
+  0% {
+    opacity: 0;
+    transform: scale(1.0);
+  }
+  66% {
+    opacity: 0;
+    transform: scale(1.2);
+  }
+  83% {
+    opacity: 1;
+    transform: scale(1.1)
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.0);
+  }
+}
+
+.slide-menu-container {
+  width: calc(100% - 6%);
+  margin: 0 auto;
+}
+
+.slide-menu-container > div {
+  height: 50vh;
+  overflow: auto;
+}
+
+.slide-menu {
+  list-style: none;
+  margin: 4px 0 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.slide-menu li a {
+  text-decoration: none;
+  display: inline-block;
+  padding: 4px 10px 2px;
+  color: #333;
+  font-size: 20px;
+  font-family: '游明朝', 'ＭＳ 明朝', '游明朝体';
+  font-weight: bold;
+  text-align: center;
+}
+
+.slide-menu li a:not(.active) {
+  background: #aaa;
+  color: #fff;
+  border-radius: 8px 8px 0 0;
+  transform: scale(.95);
+  transform-origin: bottom;
+  transition: transform .6s;
+}
+
+.slide-menu li a:not(.active):hover {
+  transform: scale(1);
+}
+
+.slide-menu-content {
+  padding: 12px 4px 0;
+  line-height: 1.8;
+}
+
+.slide-menu-content:not(.active) {
+  display: none;
+}
+
+/* ----- modern section ----- */
+
+.modern {
+  background: url(../imgs/仮想店舗背景　定式　モバイル.png) center/cover;
+  padding: 24px 0;
+}
+
+.lower-text {
+  width: 80%;
+  color: #fff;
+  text-align: justify;
+  margin: 16px auto 0;
+  font-size: 28px;
+  font-family: '游明朝', 'ＭＳ 明朝', '游明朝体';
+  font-weight: bold;
+  text-shadow: 0 2px 8px #222;
+}
+
+/* ----- usual section ----- */
+
+.usual {
+  background: url(../imgs/仮想店舗　普段使い　モバイル.png) center/cover;
+  padding: 24px 0;
+}
+
+.usual-text {
+  width: 80%;
+  color: #222;
+  text-align: justify;
+  margin: 16px auto 0;
+  font-size: 28px;
+  font-family: '游明朝', 'ＭＳ 明朝', '游明朝体';
+  font-weight: bold;
+  text-shadow: 0 2px 8px #eee;
+}
+
+.usual .product-img {
+  width: 80%;
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: flot 6s infinite linear alternate;
+}
+
+.usual .product-img img {
+  width: 100%;
+}
+
+.usual .product-img.popup {
+  opacity: 1;
+  transform: none;
+}
+
+@keyframes flot {
+  0% {
+    transform: translateY(20px) rotate(10deg);
+  }
+  25% {
+    transform: translateY(0px) rotate(5deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(0deg);
+  }
+  75% {
+    transform: translateY(0px) rotate(-5deg);
+  }
+  100% {
+    transform: translateY(20px) rotate(-10deg);
+  }
+}
+
+.usual .usual-img {
+  animation-delay: .5s;
+}
+
+.usual .usual-img:nth-child(2) {
+  animation-delay: 1s;
+}
+
+/* ----- aside section ----- */
+
+aside h2 {
+  text-align: center;
+}
+
+aside a img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.school-container {
+  margin: 16px auto 0;
+  width: calc(100% - 6%);
+}
+
+aside dl > div {
+  margin: 8px 0 0;
+}
+
+aside dt {
+  margin: 8px 0 0;
+  position: relative;
+  font-family: '游明朝', 'ＭＳ 明朝', '游明朝体';
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+aside dt::after {
+  content: '+';
+  position: absolute;
+  top: 0;
+  right: 3%;
+  transition: transform .4s;
+}
+
+aside div.open dt::after {
+  transform: rotate(45deg);
+}
+
+aside dd {
+  margin: 8px 0 0;
+  display: none;
+  animation: slideUp .4s forwards;
+  background: #ddd;
+  border-radius: 8px;
+  padding: 8px;
+}
+
+aside div.open dd {
+  display: block;
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transfoem: none;
+  }
+}
+
+aside .kintsugi dd,
+aside .school-desc
+aside .school-schedule p {
+  line-height: 1.8;
+}
+
+aside .school-desc span {
+  display: inline-block;
+  font-size: 24px;
+  font-family: '游明朝', 'ＭＳ 明朝', '游明朝体';
+  color: red;
+}
+
+aside .school-price  dd{
+  text-align: center;
+  line-height: 1.8;
+  font-size: 20px;
+}
+
+aside .school-price dd span {
+  font-weight: bold;
+}
+
+aside table {
+  width: 100%;
+  text-align: center;
+  border: 1px solid #111;
+  border-collapse: collapse;
+}
+
+aside th,
+aside td {
+  border: 1px solid #111;
+  padding: 4px;
+}
+
+aside .school-schedule p {
+  margin: 8px 0 0;
+}
+
+aside #resevation-btn {
+  all: unset;
+  margin: 8px 0 8px;
+  padding: 8px 0 4px;
+  width: 100%;
+  background: #7fff00;
+  border-radius: 24px;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 0 0 8px #bbb;
+  text-align: center;
+  box-shadow: 0 8px 0 #9acd32;
+}
+
+#resevation-btn a {
+  display: inline-block;
+  width: 100%;
+  text-decoration: none;
+  color: #fff;
+}
+
+aside #resevation-btn:active {
+  box-shadow: 0 3px 0 #9acd32;
+  transform: translateY(5px);
+}
+
+.school-map {
+  text-align: center;
+}
+
+.school-map img {
+  width: 100%;
+}
+
+.school-address {
+  margin: 8px 0 0;
+  line-height: 1.6;
+  font-size: 18px;
+}
+
+/* ----- shop  infomation ----- */
+
+.shop-address-infomation h2 {
+  text-align: center;
+}
+
+.shop-address-infomation > div {
+  width: calc(100% - 6%);
+  margin: 0 auto;
+  text-align: center;
+}
+
+
+.shop-address-infomation > div > img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.shop-address-infomation p {
+  text-align: justify;
+  line-height: 1.8;
+}
+
+/* ----- footer ----- */
+
+footer {
+  text-align: center;
+  background: #111;
+  margin: 16px 0 0;
+}
+
+footer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+footer ul a {
+  text-decoration: none;
+  display: inline-block;
+  color: #fff;
+}
+
+footer small {
+  color: #fff;
+}

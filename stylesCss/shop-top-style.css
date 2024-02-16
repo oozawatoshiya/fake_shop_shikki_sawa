@@ -1,0 +1,447 @@
+@charset "utf-8";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+}
+
+img {
+  vertical-align: bottom;
+}
+
+/* ----- header ----- */
+
+h1 {
+  margin: 0;
+  background: #111;
+  padding-left: 3%;
+}
+
+h1 img {
+  width: 150px;
+  object-fit: cover;
+}
+
+.pc-header {
+  display: none;
+}
+
+#sp-overlay-open {
+  position: fixed;
+  top: 0;
+  right: 0;
+  color: #aaa;
+  font-size: 32px;
+  display: inline-block;
+  width: 75px;
+  line-height: 75px;
+  text-align: center;
+  cursor: pointer;
+  z-index: 4;
+}
+
+#sp-overlay-open.dot-hidden {
+  opacity: 0;
+}
+
+.sp-menu-overlay {
+  position: fixed;
+  top:0 ;
+  right: 0;
+  width: 50%;
+  height: 100vh;
+  background: rgba(255, 255, 255, .8);
+  transform: translateX(100%);
+  transition: transform .5s;
+  z-index: 5;
+}
+
+.sp-menu-overlay.menu-open {
+  transform: none;
+}
+
+.sp-menu-overlay > div {
+  position: relative;
+}
+
+#sp-overlay-close {
+  position: absolute;
+  top: 6%;
+  right: 6%;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+.sp-menu {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;;
+  gap: 50px;
+  align-items: center;
+  font-size: 24px;
+}
+
+.sp-menu li a{
+  color: #111;
+  text-decoration: none;
+}
+
+#back-to-start {
+  position: fixed;
+  bottom: 3%;
+  left: 3%;
+  font-size: 48px;
+  cursor: pointer;
+  color: #aaa;
+  z-index: 5;
+}
+
+.pc-menu-container {
+  display: none;
+}
+
+/* ----- main ----- */
+
+h2 {
+  margin: 0;
+  width: 100%;
+  object-fit: cover;
+  text-align: center;
+}
+
+main section {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+main section + section {
+  border-top: 1px solid #111;
+}
+
+main section:last-child {
+  border-bottom: 1px solid #111;
+}
+
+main section a {
+  text-decoration: none;
+  color: inherit;
+}
+
+main section a img {
+  width: 200px;
+}
+
+main section a p {
+  font-size: 20px;
+}
+
+/* ----- aside section ----- */
+
+aside h2 {
+  text-align: center;
+  width: 100%;
+}
+
+aside a img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.school-container {
+  margin: 16px auto 0;
+  width: calc(100% - 6%);
+}
+
+aside dl > div {
+  margin: 8px 0 0;
+}
+
+aside dt {
+  margin: 8px 0 0;
+  position: relative;
+  font-family: '游明朝', 'ＭＳ 明朝', '游明朝体';
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+aside dt::after {
+  content: '+';
+  position: absolute;
+  top: 0;
+  right: 3%;
+  transition: transform .4s;
+}
+
+aside div.open dt::after {
+  transform: rotate(45deg);
+}
+
+aside dd {
+  margin: 8px 0 0;
+  display: none;
+  animation: slideUp .4s forwards;
+  background: #ddd;
+  border-radius: 8px;
+  padding: 8px;
+}
+
+aside div.open dd {
+  display: block;
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transfoem: none;
+  }
+}
+
+aside .kintsugi dd,
+aside .school-desc
+aside .school-schedule p {
+  line-height: 1.8;
+}
+
+aside .school-desc span {
+  display: inline-block;
+  font-size: 24px;
+  font-family: '游明朝', 'ＭＳ 明朝', '游明朝体';
+  color: red;
+}
+
+aside .school-price  dd{
+  text-align: center;
+  line-height: 1.8;
+  font-size: 20px;
+}
+
+aside .school-price dd span {
+  font-weight: bold;
+}
+
+aside table {
+  width: 100%;
+  text-align: center;
+  border: 1px solid #111;
+  border-collapse: collapse;
+}
+
+aside th,
+aside td {
+  border: 1px solid #111;
+  padding: 4px;
+}
+
+aside .school-schedule p {
+  margin: 8px 0 0;
+}
+
+aside #resevation-btn {
+  all: unset;
+  margin: 8px 0 8px;
+  padding: 8px 0 4px;
+  width: 100%;
+  background: #7fff00;
+  color: #fff;
+  border-radius: 24px;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 0 0 8px #bbb;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 8px 0 #9acd32;
+}
+
+aside #resevation-btn:active {
+  box-shadow: 0 3px 0 #9acd32;
+  transform: translateY(5px);
+}
+
+.school-map {
+  text-align: center;
+}
+
+.school-address {
+  margin: 8px 0 0;
+  line-height: 1.6;
+  font-size: 18px;
+}
+
+/* ----- shop  infomation ----- */
+
+.shop-address-infomation h2 {
+  text-align: center;
+}
+
+.shop-address-infomation > div {
+  width: calc(100% - 6%);
+  margin: 0 auto;
+  text-align: center;
+}
+
+
+.shop-address-infomation > div > img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.shop-address-infomation p {
+  text-align: justify;
+  line-height: 1.8;
+}
+
+/* ----- footer ----- */
+
+footer {
+  text-align: center;
+  background: #111;
+  margin: 16px 0 0;
+}
+
+footer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+footer ul a {
+  text-decoration: none;
+  display: inline-block;
+  color: #fff;
+}
+
+footer small {
+  color: #fff;
+}
+
+/* ----- large screen----- */
+
+@media (min-width: 768px) {
+
+  /* ----- header ----- */
+
+  .sp-header {
+    display: none;
+  }
+
+  .pc-menu-container {
+    display: block;
+  }
+
+  .pc-menu-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    background: #111;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .pc-menu {
+    max-width: 900px;
+    width: 80%;
+    height: 50px;
+    list-style: none;
+    margin: 0 auto;
+    padding: 0 3%;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+  }
+
+  .pc-menu li a {
+    width: 100%;
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 0 4px;
+  }
+
+  .pc-menu li a:hover {
+    color: #111;
+    background: #ccc;
+  }
+
+   /* ----- main ----- */
+
+   main h2 {
+    margin-top: 80px;
+   }
+
+   main section {
+    max-width: 900px;
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+   }
+
+   /* ----- aside ----- */
+
+   aside {
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  aside a img {
+    max-width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+
+  .school-access-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    text-align: center;
+  }
+
+  .school-map {
+    flex: 1;
+    order: 1;
+  }
+
+  .school-address {
+    flex: 1;
+  }
+
+   /* ----- shop-address-infomation ----- */
+
+   .shop-address-infomation {
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .shop-info-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+  }
+}

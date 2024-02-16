@@ -1,0 +1,259 @@
+@charset "utf-8";
+
+@media (min-width:768px) {
+
+  /* ----- header ----- */
+
+  .sp-header {
+    display: none;
+  }
+
+  .pc-header {
+    display: block;
+    height: 100vh;
+  }
+
+  .pc-menu-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    background: #111;
+    z-index: 10;
+  }
+
+  .pc-menu {
+    max-width: 900px;
+    width: 80%;
+    height: 50px;
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+  }
+
+  .pc-menu li a {
+    width: 100%;
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 50px;
+    padding: 0 8px;
+    box-sizing: border-box;
+  }
+
+  .pc-menu-products {
+    position: relative;
+    width: 180px;
+    height: 50px;
+  }
+
+  .pc-menu1::after {
+    content: '>';
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 20px;
+    transform: rotate(90deg);
+    transition: transform .4s;
+  }
+
+  .pc-menu.open .pc-menu1::after {
+    transform: rotate(-90deg);
+  }
+
+  .pc-menu li a:hover {
+    color: #111;
+    background: #ccc;
+  }
+
+  .pc-menu-lists {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: none;
+    animation: fadeIn .4s forwards;
+  }
+
+  .pc-menu.open .pc-menu-lists {
+    display: block;
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .pc-menu-lists li {
+    width: 100%;
+    border-top: 1px solid #fff;
+  }
+
+  .pc-menu-lists li a {
+    background: #111;
+  }
+
+  .pc-header h1 {
+    position: relative;
+    height: 100%;
+    background: linear-gradient(to top right, #111 30%, #fff);
+  }
+
+  .pc-header h1 .pc-title {
+    width: 50%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+  }
+
+  .pc-header h1 .pc-title img {
+    width: 80%;
+    object-fit: cover;
+  }
+
+  .pc-header h1 .slide-show {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+  }
+
+  /* ----- hero ----- */
+
+  .hero {
+    display: none;
+  }
+
+  /* ----- main ----- */
+
+  .ichimatu > div,
+  .ryusui > div,
+  .modern > div,
+  .usual > div {
+    max-width: 900px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .ryusui .products-container {
+    order: -1;
+  }
+
+  .vertical-text,
+  .products-container {
+    flex: 1;
+  }
+
+  .ichimatu {
+    background: url(../imgs/1段背景Web.png) center/cover;
+    padding: 24px 0;
+  }
+
+  .ryusui {
+    background: url(../imgs/2段背景Web　合成.png) center/cover;
+    padding: 24px 0;
+  }
+
+  .modern {
+    background: url(../imgs/4段背Web.png) center/cover;
+    padding: 24px 0;
+  }
+
+  .usual {
+    background: url(../imgs/５段背景Web.png) center/cover;
+    padding: 24px 0;
+  }
+
+  .usual > div .usual-text {
+    height: 300px;
+    display: grid;
+    place-items: center;
+  }
+
+  .vertical-text p {
+    font-size: 32px;
+    width: 60%;
+    writing-mode: vertical-rl;
+  }
+
+  .slide-menu-container {
+    max-width: 900px;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .slide-menu-container > div {
+    height: 250px;
+    overflow: auto;
+  }
+
+  .lower-text {
+    height: 300px;
+    display: grid;
+    place-items: center;
+  }
+
+  /* ----- aside ----- */
+
+  aside {
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  aside a img {
+    max-width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+
+  .school-access-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    text-align: center;
+  }
+
+  .school-map {
+    flex: 1;
+    order: 1;
+  }
+
+  .school-address {
+    flex: 1;
+  }
+
+  /* ----- shop-address-infomation ----- */
+
+  .shop-address-infomation {
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .shop-info-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+  }
+}

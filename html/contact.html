@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head prefix="og: https://ogp.me/ns#">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <!-- OGP設定 -->
+  <meta property="og:url" content="#">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="漆器のさわ">
+  <meta property="og:description" content="職業訓練校にて作成した仮想店舗のWEBサイトTOPページ">
+  <meta property="og:site_name" content="仮想店舗サイト　漆器のさわTOPページ">
+  <meta property="og:image" content="#">
+
+  <!-- twitter OGP設定 -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@#">
+
+  <!-- Facebook OGP設定 -->
+  <meta property="fb:app_id" content="#App-ID">
+  <!-- Bootstrap Link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="../stylesCss/contact-style.css">
+  <title>漆器のさわ - contact - </title>
+</head>
+<body>
+
+  <!-- ----- header ----- -->
+
+  <header id="start">
+    <div class="pc-menu-container">
+      <h1>
+        <img src="../../imgs/店舗ロゴ　切り抜き　横長.png" alt="漆器さわロゴ画像" width="200">
+      </h1>
+      <ul class="pc-menu">
+        <li><a href="../../index.html">TOP</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ----- main ----- -->
+
+  <main>
+    <h2>お問い合わせフォーム</h2>
+    <p><span class="must">※</span>は入力必須項目です</p>
+    <form action="#" emthod="post">
+      <dl>
+        <dt>お名前<span class="must">※</span></dt>
+        <dd>
+          <input type="text" name="name" placeholder="小林　太郎" required>
+        </dd>
+        <dt>ふりがな<span class="must">※</span></dt>
+        <dd>
+          <input typ="text" name="kana" placeholder="こばやし　たろう" required>
+        </dd>
+        <dt>メールアドレス<span class="must">※</span></dt>
+        <dd>
+          <input type="email" name="email" placeholder="sample@test.com" required>
+        </dd>
+        <dt>電話番号</dt>
+        <dd>
+          <input type="tel" name="tel" placeholder="ハイフンなしで入力">
+        </dd>
+        <dt>お問い合わせ種別<span class="must">※</span></dt>
+        <dd>
+          <label>
+            商品のお問い合わせ
+            <input type="radio" name="sort" value="商品について" required>
+          </label><br class="sp-space">
+          <label>
+            金継ぎ教室のお問い合わせ
+            <input type="radio" name="sort" value="金継ぎ教室について">
+          </label><br class="sp-space">
+          <label>
+            その他
+            <input type="radio" name="sort" value="その他">
+          </label><br class="sp-space">
+        </dd>
+        <dt>金継ぎ教室</dt>
+        <dd>
+          <select name="school">
+            <option value="選択してください" selected disabled>選択してください</option>
+            <option value="新規入会">新規入会</option>
+            <option value="ご予約">ご予約</option>
+            <option value="資料請求">資料請求</option>
+            <option value="その他">その他</option>
+          </select>
+        </dd>
+        <dt>お問い合わせ・ご質問内容</dt>
+        <dd>
+          <textarea name="comment" cols="30" rows="10" mazlength="300" minlength="4" placeholder="300文字以内で入力してください"></textarea>
+        </dd>
+      </dl>
+      <div>
+        <input type="submit" name="submit" value="送信する">
+      </div>
+    </form>
+  </main>
+
+  <!-- ----- footer ----- -->
+
+  <footer>
+    <img src="../../imgs/店舗ロゴ　切り抜き　横長.png" alt="漆器のさわロゴ画像" width="200">
+    <ul class="sns-btn">
+      <li><a href="https://twitter.com/” target=”_blank"><i class="bi bi-twitter"></i></a></li>
+      <li><a href="https://www.facebook.com/” target=”_blank"><i class="bi bi-facebook"></i></a></li>
+      <li><a href="https://www.instagram.com/” target=”_blank"><i class="bi bi-instagram"></i></a></li>
+    </ul>
+    <small>&copy;TO</small>
+  </footer>
+
+  <!-- <script src="../../js/main.js"></script> -->
+</body>
+</html>
